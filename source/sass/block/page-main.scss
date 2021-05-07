@@ -1,0 +1,11 @@
+.page-main {
+  min-width: 343px;
+  margin: 0 auto;
+  min-height: 100%;
+  padding: 0 16px;
+  border-color: $background;
+  
+  @media(min-width: 1068px) {
+    padding: 0 170px;
+  }
+}

@@ -1,0 +1,396 @@
+@mixin label-text {
+  font-size: 13px;
+  line-height: 15px;
+  font-weight: 400;
+  align-items: center;
+  cursor: pointer;
+}
+
+.route__label {
+  @include label-text;
+}
+
+.route::before {
+counter-increment: myCounter;
+content: counter(myCounter);
+width: 24px;
+height: 24px;
+font-family: "Helvetica Neue", "Arial", sans-serif;
+font-size: 16px;
+line-height: 19px;
+font-weight: 700;
+display: inline-block;
+text-align: center;
+background-color: $accent-color; 
+border-radius: 20px;
+padding-top: 2px;
+padding-right: 2px;
+box-sizing: border-box;
+}
+
+
+.route__title {
+  margin-left: 30px;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  margin-top: -24px;
+  
+  @media(min-width: 1068px) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+.route__input {
+  height: 42px;
+  background-color: $font-color; 
+  margin-top: 8px;
+  border: none;
+  padding: 0 14px;
+  font-size: 15px;
+  line-height: 18px;
+  color: $placeholder-color;
+  cursor: pointer;
+  
+  &--wherefrom,
+  &--whereto {
+    width: 100%;
+    padding: 0;
+    max-width: 728px;
+  }
+  
+  &--carrying,
+  &--method, 
+  &--cargo {
+    width: 100%;
+  }
+  
+  &--price {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  &--from,
+  &--to {
+    padding: 0 12px;
+    width: 85%;
+  }
+  
+  
+  &::placeholder {
+    font-size: 15px;
+    line-height: 18px;
+    color: $placeholder-color;
+  }
+  
+  &--active::placeholder {
+    color: $black;
+  }
+  
+  &--method,
+  &--danger {
+    color: $black;
+  }
+  
+  &--danger::placeholder {
+    background: linear-gradient(90deg, $black 23.27%, $opacity);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  } 
+  
+  &--carrying {
+    padding-top: 13px;
+  }
+}
+
+.route__carrying-block,
+.route__cargo-block,
+.route__block-temperature {
+  display: flex;
+  max-width: 356px;
+}
+
+
+.route__cargo-block {
+  margin-top: -3px;
+  
+  @media(min-width: 400px) {
+    flex-wrap: wrap;
+  }
+  
+  @media (min-width: 1068px) {
+    margin-top: -7px;
+  }
+}
+
+.route__block-checkbox {
+  margin-top: 10px;
+}
+
+.route__block {
+  display: flex;
+  max-width: 728px;
+  margin-top: -12px;
+  margin-bottom: -7px;
+  
+  @media (min-width: 1068px) {
+    margin-top: -18px;
+  }
+}
+
+.route__input--carrying,
+.route__input--method {
+  max-width: 172px;
+}
+
+.route__input--danger,
+.route__input--carrying,
+.route__input--method,
+.route__input--cargo {
+  display: block; 
+  box-sizing: border-box; 
+   -moz-appearance: none;
+   -webkit-appearance: none;
+   appearance: none;
+  background-image: url("../img/icon/point.svg"); 
+  background-repeat: no-repeat;
+  background-position: right .7em top 50%, 0 0;
+  background-size: .65em auto, 100%; 
+}
+
+
+.route__input--danger,
+.route__input--price {
+  max-width: 168px;
+}
+
+.route__item {
+  width: 50%; 
+  margin-top: 5px;
+  display: flex;
+  flex-direction: column;
+  
+  &--left {
+    margin-right: 5%;
+    position: relative;
+  }
+  
+  &--danger {
+    display: none;
+  }
+}
+
+.route__block-wherefrom,
+.route__block-whereto {
+  display: flex;
+  flex-direction: column;
+}
+
+.route__block-wherefrom {
+  margin-bottom: 20px;
+}
+
+.route__carrying-block {
+  margin-top: -3px;
+  
+  @media (min-width: 1068px) {
+    margin-top: -7px;
+  }
+}
+
+.route__block-left {
+  margin-left: auto;
+}
+
+.route__item--cargo {
+  max-width: 356px;
+  @media(min-width: 400px) {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+.route__item--price {
+  @media(min-width: 400px) {
+   width: 172px;
+   margin-right: 0;
+  }
+}
+
+.route__item--danger {
+  @media(min-width: 400px) {
+    display: block;
+    width: 172px;
+    margin-right: 12px;
+  }
+}
+
+.route__choise {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background: $input-gray;
+  padding-top: 12px;
+  padding-bottom: 13px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  max-width: 728px;
+}
+
+.route__label-choise {
+  font-size: 15px;
+  line-height: 19px;
+  padding-left: 35px;
+  position: relative;
+  color: $placeholder-color;
+  
+  &--address {
+    @include linear-gradient;
+  }
+}
+
+.route__button--active {
+  opacity: 100%;
+}
+
+.route__input-radio + label::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 2px;
+  width: 8px;
+  height: 8px;
+  background-color: $background;
+  border: 4px solid $font-color;
+  border-radius: 50%;
+}
+
+.route__input-radio:hover + label::before {
+  border: 4px solid $placeholder-color;
+}
+
+.route__input-radio:checked + label::before {
+  border: 4px solid $accent-color;
+}
+
+.route__button {
+  position: absolute;
+  z-index: 1;
+  right: 10px;
+}
+
+.route__comments {
+  border: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 17px;
+}
+
+.route__textarea {
+  width: calc(100% - 30px);
+  padding: 13px 14px;
+  font-size: 15px;
+  line-height: 18px;
+  max-width: 700px;
+  margin-bottom: 20px;
+  resize: none;
+  
+  &::placeholder {
+    color: $placeholder-color;
+  }
+  
+  @media (min-width: 1068px) {
+    margin-top: 1px;
+  }
+}
+
+.route__legend {
+  margin-bottom: 6px;
+}
+
+.route__label--checkbox {
+  position: relative;
+  padding-left: 37px;
+}
+
+.route__input-checkbox + label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -6px;
+  width: 22px;
+  height: 22px;
+  border: 2px solid $font-color;
+}
+
+.route__input-checkbox:hover + label::before {
+  border: 2px solid $placeholder-color;
+}
+
+.route__input-checkbox:checked + label::before {
+  background: $accent-color url("../img/icon/vector-check.svg") center no-repeat;
+}
+
+.route__block-temperature--closed {
+  display: none;
+}
+
+.route__block-temperature--opened {
+  display: flex;
+}
+
+/*Select*/
+
+.route__carryind-select {
+  display: flex;
+  position: absolute;
+  z-index: 1;
+  flex-direction: column;
+  background-color: $font-color;
+  color: $black;
+  width: calc(229% - 30px);
+  max-width: 356px;
+  box-sizing: border-box;
+  top: 22px;
+}
+
+.route__carryind-select--closed {
+  display: none;
+}
+
+.route__select-label {
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 17px;
+  
+  &:hover {
+    background-color: $accent-color;
+    color: $font-color;
+  }
+  
+  &--disabled {
+    color: $placeholder-color;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    background-image: url("../img/icon/point-back.svg"); 
+    background-repeat: no-repeat;
+    background-position: right .7em top 50%, 0 0;
+    background-size: .65em auto, 100%;
+    
+    &:hover {
+      background-color: $font-color;
+      color: $placeholder-color;
+    }  
+  }
+  
+  &--last {
+    padding-bottom: 3px;
+  }
+}
+
+.route__select-input:checked +label {
+  background-color: $accent-color;
+  color: $font-color;
+}

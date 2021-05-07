@@ -1,0 +1,16 @@
+.button {
+  font-family: "Helvetica Neue", "Arial", sans-serif;
+  width: 119px;
+  margin: 0 auto;
+  height: 24px;
+  background-color: $button-color;
+  text-align: center;
+  color: $font-color;
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  opacity: 30%;
+}
